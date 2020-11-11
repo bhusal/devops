@@ -1,0 +1,39 @@
+HP-SPP
+Go to software location
+# cd /repo/HP/SPP
+
+Mount the image
+# mount -o loop PL6....gen10spp...iso /tmp/a
+# mkdir /hpspp
+# rsync -av /tmp/a/ /hpspp/
+# cd /hpspp; ./launch_sum.sh
+SUM uses /var as log dir. does not have write/exec permission
+
+# more launch_sun.sh
+# vi ./packages/smartupdate
+
+look for noexec and put double quote on "$MOUNT_TEMPDIR " - These are 2 places
+
+result=`mount | grep -i "$MOUNT_TEMPDIR "
+
+# nohup ./launch_sum.sh &
+# cat nohup.out
+get the url
+
+# xhost +
+# firefox
+past the URL and follow the step
+
+select
+- localhost guided
+- interactive
+- next next
+- deploy
+
+once done, reboot
+
+If it prompts for password
+# ps -ef | grep sum
+# kill <PID>
+# rm -rf /var/tmp/sum
+
