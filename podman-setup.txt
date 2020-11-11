@@ -1,0 +1,15 @@
+Install podman
+# yum install podman
+
+# yum module list container-tools
+# yum module install container-tools
+
+# ps -ef | grep podman
+# systemctl restart podman
+
+# ps -aux | grep podman
+# systemctl restart podman
+# podman ps
+# podman images
+
+# podman pull ubintu:14.04
